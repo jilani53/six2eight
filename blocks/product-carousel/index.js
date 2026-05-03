@@ -1,0 +1,10 @@
+import './editor.css';
+import './style.css';
+
+import { registerBlockType } from '@wordpress/blocks';
+import Edit from './edit';
+
+registerBlockType('wooapb/product-carousel', {
+	edit: Edit,
+	save: () => null,
+});

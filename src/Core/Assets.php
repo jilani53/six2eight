@@ -1,0 +1,87 @@
+<?php
+/**
+ * Register assets for the plugin.
+ *
+ * @package WooAPB\Core
+ * @since 1.0.0
+ */
+
+namespace WooAPB\Core;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+/**
+ * Register assets for the plugin.
+ */
+class Assets {
+
+	/**
+	 * Register styles and scripts.
+	 *
+	 * @return void
+	 */
+	public static function register() {
+
+		/* Shared */
+		wp_register_style(
+			'wooapb-base',
+			plugins_url( 'assets/shared/css/base.css', WOOAPB_FILE ),
+			array(),
+			WOOAPB_VERSION
+		);
+
+		/* Swiper */
+		wp_register_style(
+			'wooapb-swiper',
+			plugins_url( 'assets/vendor/swiper/swiper-bundle.min.css', WOOAPB_FILE ),
+			array(),
+			'11.0.5'
+		);
+
+		wp_register_script(
+			'wooapb-swiper',
+			plugins_url( 'assets/vendor/swiper/swiper-bundle.min.js', WOOAPB_FILE ),
+			array(),
+			'11.0.5',
+			true
+		);
+
+		wp_register_script(
+			'wooapb-carousel-init',
+			plugins_url( 'assets/shared/js/carousel-init.js', WOOAPB_FILE ),
+			array( 'wooapb-swiper' ),
+			WOOAPB_VERSION,
+			true
+		);
+
+		wp_register_script(
+			'wooapb-load-more',
+			plugins_url( 'assets/shared/js/load-more.js', WOOAPB_FILE ),
+			array(),
+			WOOAPB_VERSION,
+			true
+		);
+	}
+
+	/**
+	 * Enqueue assets.
+	 *
+	 * @return void
+	 */
+	public static function enqueue() {
+		wp_enqueue_style( 'wooapb-base' );
+		wp_enqueue_script( 'wooapb-load-more' );
+
+		// Localize script.
+		wp_localize_script(
+			'wooapb-load-more',
+			'wooapb',
+			array(
+				'ajax_url' => admin_url( 'admin-ajax.php' ),
+				'nonce'    => wp_create_nonce( 'wooapb_load_more' ),
+			)
+		);
+	}
+}
