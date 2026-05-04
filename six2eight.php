@@ -1,13 +1,12 @@
 <?php
 /**
- * Plugin Name: Woo Advanced Product Blocks
- * Description: Grid & Carousel WooCommerce product blocks with filters.
+ * Plugin Name: six2eight
+ * Description: Develop 2 section for gutenberg and elementor.
  * Version: 1.0.0
  * Author: Jilani Ahmed
  * License: GPL-2.0-or-later
- * Requires Plugins: woocommerce
  *
- * @package Woo_Advanced_Product_Blocks
+ * @package six2eight
  */
 
 defined( 'ABSPATH' ) || exit;

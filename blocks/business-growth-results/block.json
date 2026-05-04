@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wooapb/business-growth-results",
+	"version": "1.0.0",
+	"title": "Business Growth Results",
+	"category": "design",
+	"icon": "screenoptions",
+	"description": "Results showcase section.",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "Results that last beyond the"
+		},
+		"highlight": {
+			"type": "string",
+			"default": "next push"
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "See All Results"
+		},
+		"buttonUrl": {
+			"type": "string",
+			"default": "#"
+		}
+	},
+	"editorScript": "file:../../build/business-growth-results/index.js",
+	"editorStyle": "file:./editor.css",
+	"style": "file:./style.css"
+}
