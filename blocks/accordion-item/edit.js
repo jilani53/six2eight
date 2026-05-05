@@ -1,0 +1,42 @@
+import { RichText, InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, ToggleControl } from '@wordpress/components';
+
+export default function Edit( { attributes, setAttributes } ) {
+	const { title, content, isDefaultOpen } = attributes;
+
+	return (
+		<>
+			<InspectorControls>
+				<PanelBody title="Accordion Settings">
+					<ToggleControl
+						label="Open by default"
+						checked={ !! isDefaultOpen }
+						onChange={ ( value ) =>
+							setAttributes( { isDefaultOpen: value } )
+						}
+					/>
+				</PanelBody>
+			</InspectorControls>
+
+			<div className="wpn-accordion-item">
+				<RichText
+					tagName="div"
+					className="wpn-accordion-item__title"
+					value={ title }
+					onChange={ ( value ) =>
+						setAttributes( { title: value } )
+					}
+				/>
+
+				<RichText
+					tagName="div"
+					className="wpn-accordion-item__content"
+					value={ content }
+					onChange={ ( value ) =>
+						setAttributes( { content: value } )
+					}
+				/>
+			</div>
+		</>
+	);
+}

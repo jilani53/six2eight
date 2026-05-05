@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wpn/accordion",
+	"title": "WPN Accordion",
+	"category": "design",
+	"icon": "screenoptions",
+	"description": "Accordion parent block",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "CMO's Guide to Ecommerce Profitability"
+		},
+		"description": {
+			"type": "string",
+			"default": "Most consultants create dependency..."
+		}
+	},
+	"editorScript": "file:../../build/accordion/index.js",
+	"viewScript": "wooapb-tab",
+	"style": "file:./style.css"
+}

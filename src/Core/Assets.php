@@ -63,6 +63,14 @@ class Assets {
 			WOOAPB_VERSION,
 			true
 		);
+		
+		wp_register_script(
+			'wooapb-tab',
+			plugins_url( 'assets/shared/js/tab.js', WOOAPB_FILE ),
+			array(),
+			WOOAPB_VERSION,
+			true
+		);
 	}
 
 	/**
@@ -73,6 +81,7 @@ class Assets {
 	public static function enqueue() {
 		wp_enqueue_style( 'wooapb-base' );
 		wp_enqueue_script( 'wooapb-load-more' );
+		wp_enqueue_script( 'wooapb-tab' );
 
 		// Localize script.
 		wp_localize_script(

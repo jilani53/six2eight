@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",  
+  "apiVersion": 3,
+    "name": "wpn/accordion-item",
+    "title": "Accordion Item",
+    "parent": [ "wpn/accordion" ],
+    "category": "design",
+    "supports": {
+      "reusable": false,
+      "html": false
+    },
+    "attributes": {
+      "isDefaultOpen": {
+        "type": "boolean",
+        "default": false
+      },
+      "title": {
+        "type": "string",
+        "default": "Accordion Title"
+      },
+      "content": {
+        "type": "string",
+        "default": "Accordion content..."
+      }
+    },
+    "editorScript": "file:../../build/accordion-item/index.js",
+    "viewScript": "wooapb-tab",
+	  "style": "file:./style.css"
+  }
