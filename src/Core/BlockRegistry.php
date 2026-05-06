@@ -37,14 +37,14 @@ class BlockRegistry {
 
 			$block_name = str_replace( 'wooapb/', '', $metadata['name'] );
 
-			// kebab-case → PascalCase
+			// kebab-case → PascalCase.
 			$pascal_case = str_replace( ' ', '', ucwords( str_replace( '-', ' ', $block_name ) ) );
 
 			$class_name = "\\WooAPB\\Blocks\\$pascal_case\\Render";
 
 			$args = array();
 
-			// ✅ Only attach render_callback if class exists
+			// Only attach render_callback if class exists.
 			if ( class_exists( $class_name ) ) {
 				$args['render_callback'] = array( self::class, 'render_block' );
 			}

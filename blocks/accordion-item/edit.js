@@ -29,7 +29,15 @@ export default function Edit( { attributes, setAttributes } ) {
 				/>
 
 				<div className="wpn-accordion-item__content">
-					<InnerBlocks templateLock={ false } />
+					<InnerBlocks
+						template={[
+							[
+								'core/paragraph',
+								{ content: 'Add your accordion content here...' }
+							]
+						]}
+						templateLock={ false }
+					/>
 				</div>
 			</div>
 		</>
