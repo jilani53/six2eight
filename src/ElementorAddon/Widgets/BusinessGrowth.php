@@ -39,7 +39,7 @@ class BusinessGrowth extends Widget_Base {
 	 * @return string
 	 */
 	public function get_icon(): string {
-		return 'eicon-chart';
+		return 'eicon-image-rollover';
 	}
 
 	/**

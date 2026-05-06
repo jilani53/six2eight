@@ -27,7 +27,7 @@ class Assets {
 		/* Shared */
 		wp_register_style(
 			'wooapb-base',
-			plugins_url( 'assets/shared/css/base.css', WOOAPB_FILE ),
+			plugins_url( 'assets/shared/css/base.min.css', WOOAPB_FILE ),
 			array(),
 			WOOAPB_VERSION
 		);

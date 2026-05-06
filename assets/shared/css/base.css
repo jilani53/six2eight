@@ -108,3 +108,257 @@
 		transform: rotate(360deg);
 	}
 }
+
+/**
+ * Style for elementor addon
+ */
+
+/* Parent Block Only */
+.wpn-accordion {
+	position: relative;
+	display: grid;
+	gap: 32px;
+	z-index: 1;
+	width: 100%;
+	padding: 50px 20px;
+	border-radius: 12px;
+}
+
+.wpn-accordion::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+
+	background-image: url('../../images/accordion-bg.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	border-radius: 12px;
+
+	opacity: 0.5; /* subtle */
+	pointer-events: none;
+	z-index: 0;
+}
+
+.wpn-accordion > * {
+	position: relative;
+	z-index: 1;
+}
+
+.wpn-accordion__header {
+	text-align: center;
+	max-width: 720px;
+	margin: 0 auto;
+}
+
+.wpn-accordion__nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 12px;
+}
+
+.wpn-accordion .wpn-accordion__header h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 72px;
+	margin-bottom: 15px;
+}
+
+/* Child Block Only */
+
+.wpn-accordion-item {
+	display: contents;
+}
+
+.wpn-accordion-item-icon__container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: 1px solid #dddddd;
+	transition:
+		background 0.25s ease,
+		transform 0.2s ease,
+		box-shadow 0.25s ease;
+}
+
+.wpn-accordion-item__nav {
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+
+	padding: 16px 12px;
+	border-radius: 16px;
+
+	cursor: pointer;
+	user-select: none;
+
+	/* 🔥 Glass base */
+	background: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+
+	/* subtle border */
+	border: 1px solid rgba(255, 255, 255, 0.25);
+
+	/* depth */
+	box-shadow:
+		0 4px 20px rgba(0, 0, 0, 0.08),
+		inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+	transition:
+		background 0.25s ease,
+		box-shadow 0.25s ease,
+		transform 0.2s ease;
+}
+
+.wpn-accordion-item__panel {
+	grid-column: 2;
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 0.3s ease;
+	will-change: max-height;
+}
+
+.wpn-accordion-item.is-open .wpn-accordion-item__panel {
+    max-height: 1000px;
+    padding: 15px;
+    border-radius: 16px;
+	/* Glass base */
+	background: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+
+	/* subtle border */
+	border: 1px solid rgba(255, 255, 255, 0.25);
+
+	/* depth */
+	box-shadow:
+		0 4px 20px rgba(0, 0, 0, 0.08),
+		inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.wpn-accordion-item__icon {
+	transition: transform 0.25s ease;
+}
+
+.wpn-accordion-item.is-open .wpn-accordion-item__icon.minus-icon,
+.wpn-accordion-item .wpn-accordion-item__icon.plus-icon {
+	display: block;
+	margin-left: 2px;
+}
+
+.wpn-accordion-item .wpn-accordion-item__icon.minus-icon,
+.wpn-accordion-item.is-open .wpn-accordion-item__icon.plus-icon {
+	display: none;
+}
+
+/*
+* Business growth
+*/
+.wpn-results-grid {
+	position: relative;
+	background: linear-gradient(135deg, #1b2735, #4b1248);
+	color: #ffffff;
+	display: grid;
+	grid-template-columns: 40% 60%;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.wpn-results-grid::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+
+	background-image: url('../../images/beautiful-skyscape-daytime.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	opacity: 0.7; /* increase visibility */
+	z-index: 0;
+}
+
+.wpn-results-grid > * {
+	position: relative;
+	z-index: 1;
+}
+
+.wpn-results-grid__featured {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.wpn-results-grid__featured h2 {
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 72px;
+}
+
+.wpn-results-grid__featured h2 em {
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.wp-block-wooapb-growth-result-item h3 {
+    color: #ffffff;
+    font-size: 48px;
+    letter-spacing: -3px;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.wpn-result-growth {
+    color: #00B98B;
+}
+
+.wp-block-wooapb-growth-result-item h3 span {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 1;
+}
+
+.wp-block-wooapb-growth-result-item {
+    background: #191818;
+    color: #ffffff;
+    padding: 5rem 2rem 2rem 2rem;
+    border: 0.5px solid #252525;
+}
+
+.wp-block-wooapb-growth-result-item p:last-child {
+    margin: 0
+}
+
+.wpn-results-grid__featured a.wpn-results-grid__button {
+    background: #ffffff;
+    color: #191818;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 30px;
+    max-width: 150px;
+    text-align: center;
+}
+
+.wpn-results-grid__items {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.wp-block-wooapb-result-item {
+	padding: 4rem;
+	background: #050505;
+	color: #fff;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
