@@ -1,12 +1,33 @@
+
 .wpn-results-grid {
-    background: linear-gradient(135deg, #1b2735, #4b1248);
-    color: #ffffff;
-    display: grid;
-    grid-template-columns: 40% 60%;
-    border-radius: 12px;
-    overflow: hidden;
+	position: relative;
+	background: linear-gradient(135deg, #1b2735, #4b1248);
+	color: #ffffff;
+	display: grid;
+	grid-template-columns: 40% 60%;
+	border-radius: 12px;
+	overflow: hidden;
 }
-  
+
+.wpn-results-grid::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+
+	background-image: url('../../assets/images/beautiful-skyscape-daytime.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	opacity: 0.7; /* increase visibility */
+	z-index: 0;
+}
+
+.wpn-results-grid > * {
+	position: relative;
+	z-index: 1;
+}
+
 .wpn-results-grid__featured {
     padding: 2rem;
     display: flex;
@@ -28,7 +49,7 @@
 
 .wp-block-wooapb-growth-result-item h3 {
     color: #ffffff;
-    font-size: 45px;
+    font-size: 48px;
     letter-spacing: -3px;
     font-style: italic;
     margin-bottom: 5px;
@@ -39,7 +60,7 @@
 }
 
 .wp-block-wooapb-growth-result-item h3 span {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 400;
     letter-spacing: 0px;
     line-height: 1;
@@ -48,7 +69,7 @@
 .wp-block-wooapb-growth-result-item {
     background: #191818;
     color: #ffffff;
-    padding: 4rem 2rem 2rem 2rem;
+    padding: 5rem 2rem 2rem 2rem;
     border: 0.5px solid #252525;
 }
 

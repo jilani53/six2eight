@@ -13,6 +13,7 @@ if ( ! function_exists( 'add_action' ) ) {
 }
 
 use WooAPB\Core\Assets;
+use WooAPB\ElementorAddon\ElementorAddon;
 
 /**
  * Core files entry point.
@@ -34,5 +35,7 @@ class Plugin {
 		// Load block based inline styles.
 		add_action( 'enqueue_block_assets', array( Assets::class, 'enqueue' ), 20 );
 		add_action( 'wp_enqueue_scripts', array( Assets::class, 'enqueue' ), 20 );
+
+		add_action( 'elementor/widgets/register', array( ElementorAddon::class, 'register_elementor_widgets' ) );
 	}
 }
