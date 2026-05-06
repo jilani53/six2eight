@@ -3,7 +3,7 @@
     "apiVersion": 3,
     "name": "wooapb/growth-result-item",
     "version": "1.0.0",
-    "title": "Result Item",
+    "title": "six2eight Result Item",
     "category": "design",
     "icon": "chart-line",
     "parent": [
@@ -17,7 +17,7 @@
     "attributes": {
         "amount": {
             "type": "string",
-            "default": "$300MM"
+            "default": "$10MM"
         },
         "suffix": {
             "type": "string",

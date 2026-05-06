@@ -1,4 +1,4 @@
-import { RichText, InspectorControls } from '@wordpress/block-editor';
+import { RichText, InspectorControls, InnerBlocks } from '@wordpress/block-editor';
 import { PanelBody, ToggleControl } from '@wordpress/components';
 
 export default function Edit( { attributes, setAttributes } ) {
@@ -28,14 +28,9 @@ export default function Edit( { attributes, setAttributes } ) {
 					}
 				/>
 
-				<RichText
-					tagName="div"
-					className="wpn-accordion-item__content"
-					value={ content }
-					onChange={ ( value ) =>
-						setAttributes( { content: value } )
-					}
-				/>
+				<div className="wpn-accordion-item__content">
+					<InnerBlocks templateLock={ false } />
+				</div>
 			</div>
 		</>
 	);

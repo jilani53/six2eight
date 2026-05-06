@@ -11,14 +11,15 @@
 	margin: 0 auto;
 }
 
-.wpn-accordion__wrapper {
-	display: grid;
-	grid-template-columns: 120px 1fr;
-	gap: 24px;
-}
-
 .wpn-accordion__nav {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 	gap: 12px;
+}
+
+.wpn-accordion .wpn-accordion__header h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 72px;
 }

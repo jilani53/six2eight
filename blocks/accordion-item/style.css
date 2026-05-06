@@ -4,14 +4,52 @@
 	display: contents;
 }
 
+.wpn-accordion-item-icon__container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: 1px solid #dddddd;
+	transition:
+		background 0.25s ease,
+		transform 0.2s ease,
+		box-shadow 0.25s ease;
+}
+
 .wpn-accordion-item__nav {
 	writing-mode: vertical-rl;
 	transform: rotate(180deg);
-	padding: 16px 10px;
-	border-radius: 20px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+
+	padding: 16px 12px;
+	border-radius: 16px;
+
 	cursor: pointer;
-	background: rgba(255,255,255,0.6);
-	transition: all 0.25s ease;
+	user-select: none;
+
+	/* 🔥 Glass base */
+	background: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+
+	/* subtle border */
+	border: 1px solid rgba(255, 255, 255, 0.25);
+
+	/* depth */
+	box-shadow:
+		0 4px 20px rgba(0, 0, 0, 0.08),
+		inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+	transition:
+		background 0.25s ease,
+		box-shadow 0.25s ease,
+		transform 0.2s ease;
 }
 
 .wpn-accordion-item__panel {
@@ -19,16 +57,38 @@
 	overflow: hidden;
 	max-height: 0;
 	transition: max-height 0.3s ease;
+	will-change: max-height;
 }
 
 .wpn-accordion-item.is-open .wpn-accordion-item__panel {
-	max-height: 1000px; /* fallback */
+    max-height: 1000px;
+    padding: 15px;
+    border-radius: 16px;
+	/* Glass base */
+	background: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+
+	/* subtle border */
+	border: 1px solid rgba(255, 255, 255, 0.25);
+
+	/* depth */
+	box-shadow:
+		0 4px 20px rgba(0, 0, 0, 0.08),
+		inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .wpn-accordion-item__icon {
 	transition: transform 0.25s ease;
 }
 
-.wpn-accordion-item.is-open .wpn-accordion-item__icon {
-	transform: rotate(45deg);
+.wpn-accordion-item.is-open .wpn-accordion-item__icon.minus-icon,
+.wpn-accordion-item .wpn-accordion-item__icon.plus-icon {
+	display: block;
+	margin-left: 2px;
+}
+
+.wpn-accordion-item .wpn-accordion-item__icon.minus-icon,
+.wpn-accordion-item.is-open .wpn-accordion-item__icon.plus-icon {
+	display: none;
 }

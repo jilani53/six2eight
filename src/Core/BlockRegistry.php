@@ -73,6 +73,6 @@ class BlockRegistry {
 			return $class_name::render( $attributes, $content, $block );
 		}
 
-		return $content; // fallback for static safety
+		return $content; // Fallback for static safety.
 	}
 }

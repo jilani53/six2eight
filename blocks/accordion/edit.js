@@ -1,4 +1,4 @@
-import { InnerBlocks, RichText } from '@wordpress/block-editor';
+import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 
 const TEMPLATE = [
 	[ 'wpn/accordion-item' ],
@@ -9,12 +9,15 @@ const TEMPLATE = [
 export default function Edit( { attributes, setAttributes } ) {
 	const { title, description } = attributes;
 
+	const blockProps = useBlockProps();
+
 	return (
-		<div className="wpn-accordion">
+		<section { ...blockProps } className="wpn-accordion">
 			<RichText
 				tagName="h2"
 				value={ title }
 				onChange={ ( value ) => setAttributes( { title: value } ) }
+				inlineToolbar
 				placeholder="Add title..."
 			/>
 
@@ -32,6 +35,6 @@ export default function Edit( { attributes, setAttributes } ) {
 					orientation="horizontal"
 				/>
 			</div>
-		</div>
+		</section>
 	);
 }

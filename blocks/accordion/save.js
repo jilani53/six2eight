@@ -4,7 +4,7 @@ export default function save( { attributes } ) {
 	const { title, description } = attributes;
 
 	return (
-		<div className="wpn-accordion" data-wpn-accordion>
+		<section className="wpn-accordion" data-wpn-accordion>
 			<div className="wpn-accordion__header">
 				<RichText.Content tagName="h2" value={ title } />
 				<RichText.Content tagName="p" value={ description } />
@@ -17,6 +17,6 @@ export default function save( { attributes } ) {
 
 				<div className="wpn-accordion__content" data-wpn-content></div>
 			</div>
-		</div>
+		</section>
 	);
 }

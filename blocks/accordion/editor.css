@@ -1,0 +1,14 @@
+.wpn-accordion {
+    margin: 30px;
+    padding: 30px;
+    border: 2px dashed #ddd;
+    border-radius: 12px;
+}
+
+.wpn-accordion-item {
+    display: block;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 12px;
+}

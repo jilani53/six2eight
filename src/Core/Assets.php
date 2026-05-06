@@ -63,10 +63,11 @@ class Assets {
 			WOOAPB_VERSION,
 			true
 		);
-		
+
+		/* Tab JS code */
 		wp_register_script(
 			'wooapb-tab',
-			plugins_url( 'assets/shared/js/tab.js', WOOAPB_FILE ),
+			plugins_url( 'assets/shared/js/tab.min.js', WOOAPB_FILE ),
 			array(),
 			WOOAPB_VERSION,
 			true
